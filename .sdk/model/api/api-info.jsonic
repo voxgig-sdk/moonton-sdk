@@ -1,0 +1,24 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "Moonton API Support"
+        url: "https://en.moonton.com/games/index.html"
+      }
+      description: "The Moonton API provides access to various game-related functionalities, allowing developers to fetch game data, player statistics, and manage in-game transactions. It aims to enhance user engagement by offering features that integrate seamlessly with Moonton's gaming ecosystem."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://api.moonton.com/v1"
+        }
+      ]
+      title: "Moonton API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

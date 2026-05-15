@@ -1,0 +1,49 @@
+{
+  "existing": {
+    "game": {
+      "GAME00": {
+        "active": true,
+        "description": "s51",
+        "genre": "s52",
+        "id": "GAME00",
+        "name": "s54",
+        "platform": [],
+        "player_count": "s56",
+        "release_date": "s57"
+      },
+      "GAME01": {
+        "active": true,
+        "description": "sa1",
+        "genre": "sa2",
+        "id": "GAME01",
+        "name": "sa4",
+        "platform": [],
+        "player_count": "sa6",
+        "release_date": "sa7"
+      },
+      "GAME02": {
+        "active": true,
+        "description": "sf1",
+        "genre": "sf2",
+        "id": "GAME02",
+        "name": "sf4",
+        "platform": [],
+        "player_count": "sf6",
+        "release_date": "sf7"
+      }
+    }
+  },
+  "new": {
+    "game": {
+      "game_ref01": {
+        "active": true,
+        "description": "s141",
+        "genre": "s142",
+        "name": "s144",
+        "platform": [],
+        "player_count": "s146",
+        "release_date": "s147"
+      }
+    }
+  }
+}
