@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/moonton-sdk"
-	"github.com/voxgig-sdk/moonton-sdk/core"
+	sdk "github.com/voxgig-sdk/moonton-sdk/go"
+	"github.com/voxgig-sdk/moonton-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/moonton-sdk/go/utility/struct"
 )
 
 func TestGameEntity(t *testing.T) {

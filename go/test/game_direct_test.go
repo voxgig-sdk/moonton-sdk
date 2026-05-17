@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/moonton-sdk"
-	"github.com/voxgig-sdk/moonton-sdk/core"
+	sdk "github.com/voxgig-sdk/moonton-sdk/go"
+	"github.com/voxgig-sdk/moonton-sdk/go/core"
 )
 
 func TestGameDirect(t *testing.T) {

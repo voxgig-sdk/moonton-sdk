@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/moonton-sdk/core"
+import "github.com/voxgig-sdk/moonton-sdk/go/core"
 
 func featureAddUtil(ctx *core.Context, f core.Feature) {
 	client := ctx.Client

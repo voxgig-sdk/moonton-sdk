@@ -1,10 +1,10 @@
 package voxgigmoontonsdk
 
 import (
-	"github.com/voxgig-sdk/moonton-sdk/core"
-	"github.com/voxgig-sdk/moonton-sdk/entity"
-	"github.com/voxgig-sdk/moonton-sdk/feature"
-	_ "github.com/voxgig-sdk/moonton-sdk/utility"
+	"github.com/voxgig-sdk/moonton-sdk/go/core"
+	"github.com/voxgig-sdk/moonton-sdk/go/entity"
+	"github.com/voxgig-sdk/moonton-sdk/go/feature"
+	_ "github.com/voxgig-sdk/moonton-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

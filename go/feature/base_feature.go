@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/moonton-sdk/core"
+	"github.com/voxgig-sdk/moonton-sdk/go/core"
 )
 
 type BaseFeature struct {
