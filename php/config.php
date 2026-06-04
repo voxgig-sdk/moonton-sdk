@@ -20,9 +20,6 @@ class MoontonConfig
             ],
             "options" => [
                 "base" => "https://api.moonton.com/v1",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

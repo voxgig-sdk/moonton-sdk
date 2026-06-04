@@ -79,14 +79,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'MOONTON_TEST_GAME_ENTID': {},
     'MOONTON_TEST_LIVE': 'FALSE',
-    'MOONTON_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.MOONTON_TEST_LIVE
 
   if (live) {
     const client = new MoontonSDK({
-      apikey: env.MOONTON_APIKEY,
     })
 
     let idmap: any = env['MOONTON_TEST_GAME_ENTID']

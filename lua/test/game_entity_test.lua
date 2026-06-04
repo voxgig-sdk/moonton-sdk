@@ -92,7 +92,6 @@ function game_basic_setup(extra)
     ["MOONTON_TEST_GAME_ENTID"] = idmap,
     ["MOONTON_TEST_LIVE"] = "FALSE",
     ["MOONTON_TEST_EXPLAIN"] = "FALSE",
-    ["MOONTON_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -104,7 +103,6 @@ function game_basic_setup(extra)
   if env["MOONTON_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["MOONTON_APIKEY"],
       },
       extra or {},
     })

@@ -86,7 +86,6 @@ function game_basic_setup($extra)
         "MOONTON_TEST_GAME_ENTID" => $idmap,
         "MOONTON_TEST_LIVE" => "FALSE",
         "MOONTON_TEST_EXPLAIN" => "FALSE",
-        "MOONTON_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +97,6 @@ function game_basic_setup($extra)
     if ($env["MOONTON_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["MOONTON_APIKEY"],
             ],
             $extra ?? [],
         ]);

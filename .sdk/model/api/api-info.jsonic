@@ -17,8 +17,23 @@ main: {
       ]
       title: "Moonton API"
       version: "1.0.0"
+      tagline: "Unofficial pointer at Moonton's game services — no documented public API"
+      homepage: "https://en.moonton.com/"
+      docs_url: "https://freepublicapis.com/moonton-api"
+      license_short: "No public licence; Moonton services are proprietary and intended for internal/game-client use"
+      license_md: `- Moonton has not published a public API or developer terms for third-party access
+- All Moonton game data and services are proprietary to Moonton Technology Co., Ltd.
+- The endpoint referenced by community catalogues points at a game/login page, not a documented data API
+- Treat any access as unsupported; respect Moonton's terms of service and do not scrape player data`
+      about_md: `[Moonton](https://en.moonton.com/) is a game development studio best known for *Mobile Legends: Bang Bang*, along with *Magic Chess: Go Go*, *Mobile Legends: Adventure*, *Watcher of Realms*, and other mobile titles. The company does not publish a public, documented REST API for its game data.
+
+This SDK is generated from a community catalogue entry on [freepublicapis.com](https://freepublicapis.com/moonton-api) which lists a single reachable endpoint pointing at Moonton's game/login page. There is no published schema, authentication scheme, or rate-limit documentation behind it.
+
+If you are looking for Mobile Legends or other Moonton game data, check the official site or community-maintained datasets — this SDK is a placeholder and is unlikely to return structured JSON.`
+      entity_desc: {
+        game: "Placeholder grouping for Moonton game-related resources; no public endpoints or schema are documented by Moonton."
+      }
+      auth: false
     }
   }
-}
-
 }

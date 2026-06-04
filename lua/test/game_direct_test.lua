@@ -63,14 +63,12 @@ function game_direct_setup(mockres)
   local env = runner.env_override({
     ["MOONTON_TEST_GAME_ENTID"] = {},
     ["MOONTON_TEST_LIVE"] = "FALSE",
-    ["MOONTON_APIKEY"] = "NONE",
   })
 
   local live = env["MOONTON_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["MOONTON_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {
