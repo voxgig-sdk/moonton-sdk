@@ -10,7 +10,7 @@ The Python SDK for the Moonton API — an entity-oriented client following Pytho
 
 ## Install
 ```bash
-pip install moonton-sdk
+pip install voxgig-sdk-moonton
 ```
 
 Or install from source:

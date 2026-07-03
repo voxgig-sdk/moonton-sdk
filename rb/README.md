@@ -10,13 +10,13 @@ The Ruby SDK for the Moonton API — an entity-oriented client using idiomatic R
 
 ## Install
 ```bash
-gem install moonton-sdk
+gem install voxgig-sdk-moonton
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "moonton-sdk"
+gem "voxgig-sdk-moonton"
 ```
 
 Then run:

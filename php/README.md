@@ -10,7 +10,7 @@ The PHP SDK for the Moonton API — an entity-oriented client using PHP conventi
 
 ## Install
 ```bash
-composer require voxgig/moonton-sdk
+composer require voxgig-sdk/moonton
 ```
 
 

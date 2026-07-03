@@ -10,7 +10,7 @@ The TypeScript SDK for the Moonton API — a type-safe, entity-oriented client w
 
 ## Install
 ```bash
-npm install moonton
+npm install @voxgig-sdk/moonton
 ```
 ## Tutorial: your first API call
 
