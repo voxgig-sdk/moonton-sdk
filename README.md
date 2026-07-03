@@ -1,16 +1,8 @@
 # Moonton SDK
 
-Unofficial pointer at Moonton's game services — no documented public API
+Moonton API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Moonton API
-
-[Moonton](https://en.moonton.com/) is a game development studio best known for *Mobile Legends: Bang Bang*, along with *Magic Chess: Go Go*, *Mobile Legends: Adventure*, *Watcher of Realms*, and other mobile titles. The company does not publish a public, documented REST API for its game data.
-
-This SDK is generated from a community catalogue entry on [freepublicapis.com](https://freepublicapis.com/moonton-api) which lists a single reachable endpoint pointing at Moonton's game/login page. There is no published schema, authentication scheme, or rate-limit documentation behind it.
-
-If you are looking for Mobile Legends or other Moonton game data, check the official site or community-maintained datasets — this SDK is a placeholder and is unlikely to return structured JSON.
 
 ## Try it
 
@@ -44,29 +36,31 @@ gem install moonton-sdk
 luarocks install moonton-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { MoontonSDK } from 'moonton'
 
-const client = new MoontonSDK({})
+const client = new MoontonSDK({
+  apikey: process.env.MOONTON_APIKEY,
+})
 
 // List all games
 const games = await client.Game().list()
+console.log(games.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -96,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Game** | Placeholder grouping for Moonton game-related resources; no public endpoints or schema are documented by Moonton. | `/games` |
+| **Game** |  | `/games` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -106,12 +100,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from moonton_sdk import MoontonSDK
 
-client = MoontonSDK({})
+client = MoontonSDK({
+    "apikey": os.environ.get("MOONTON_APIKEY"),
+})
 
 # List all games
-games, err = client.Game(None).list(None, None)
+games, err = client.Game().list()
+print(games)
 ```
 
 ### PHP
@@ -120,10 +118,13 @@ games, err = client.Game(None).list(None, None)
 <?php
 require_once 'moonton_sdk.php';
 
-$client = new MoontonSDK([]);
+$client = new MoontonSDK([
+    "apikey" => getenv("MOONTON_APIKEY"),
+]);
 
 // List all games
-[$games, $err] = $client->Game(null)->list(null, null);
+[$games, $err] = $client->Game()->list();
+print_r($games);
 ```
 
 ### Golang
@@ -131,10 +132,13 @@ $client = new MoontonSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/moonton-sdk/go"
 
-client := sdk.NewMoontonSDK(map[string]any{})
+client := sdk.NewMoontonSDK(map[string]any{
+    "apikey": os.Getenv("MOONTON_APIKEY"),
+})
 
 // List all games
 games, err := client.Game(nil).List(nil, nil)
+fmt.Println(games)
 ```
 
 ### Ruby
@@ -142,10 +146,13 @@ games, err := client.Game(nil).List(nil, nil)
 ```ruby
 require_relative "Moonton_sdk"
 
-client = MoontonSDK.new({})
+client = MoontonSDK.new({
+  "apikey" => ENV["MOONTON_APIKEY"],
+})
 
 # List all games
-games, err = client.Game(nil).list(nil, nil)
+games, err = client.Game().list
+puts games
 ```
 
 ### Lua
@@ -153,10 +160,13 @@ games, err = client.Game(nil).list(nil, nil)
 ```lua
 local sdk = require("moonton_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("MOONTON_APIKEY"),
+})
 
 -- List all games
-local games, err = client:Game(nil):list(nil, nil)
+local games, err = client:Game():list()
+print(games)
 ```
 
 ## Unit testing in offline mode
@@ -175,25 +185,21 @@ const result = await client.Game().load({ id: 'test01' })
 ### Python
 
 ```python
-client = MoontonSDK.test(None, None)
-result, err = client.Game(None).load(
-    {"id": "test01"}, None
-)
+client = MoontonSDK.test()
+result, err = client.Game().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = MoontonSDK::test(null, null);
-[$result, $err] = $client->Game(null)->load(
-    ["id" => "test01"], null
-);
+$client = MoontonSDK::test();
+[$result, $err] = $client->Game()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Game(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -202,19 +208,15 @@ result, err := client.Game(nil).Load(
 ### Ruby
 
 ```ruby
-client = MoontonSDK.test(nil, nil)
-result, err = client.Game(nil).load(
-  { "id" => "test01" }, nil
-)
+client = MoontonSDK.test
+result, err = client.Game().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Game(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Game():load({ id = "test01" })
 ```
 
 ## How it works
@@ -318,16 +320,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Moonton API
-
-- Upstream: [https://en.moonton.com/](https://en.moonton.com/)
-- API docs: [https://freepublicapis.com/moonton-api](https://freepublicapis.com/moonton-api)
-
-- Moonton has not published a public API or developer terms for third-party access
-- All Moonton game data and services are proprietary to Moonton Technology Co., Ltd.
-- The endpoint referenced by community catalogues points at a game/login page, not a documented data API
-- Treat any access as unsupported; respect Moonton's terms of service and do not scrape player data
 
 ---
 

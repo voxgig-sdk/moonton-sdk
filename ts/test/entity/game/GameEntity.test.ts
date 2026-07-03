@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'MOONTON_TEST_GAME_ENTID': idmap,
     'MOONTON_TEST_LIVE': 'FALSE',
     'MOONTON_TEST_EXPLAIN': 'FALSE',
+    'MOONTON_APIKEY': 'NONE',
   })
 
   idmap = env['MOONTON_TEST_GAME_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new MoontonSDK(merge([
       {
+        apikey: env.MOONTON_APIKEY,
       },
       extra
     ]))

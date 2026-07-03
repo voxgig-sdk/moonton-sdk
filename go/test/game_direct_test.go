@@ -93,12 +93,14 @@ func gameDirectSetup(mockres any) *gameDirectSetupResult {
 	env := envOverride(map[string]any{
 		"MOONTON_TEST_GAME_ENTID": map[string]any{},
 		"MOONTON_TEST_LIVE":    "FALSE",
+		"MOONTON_APIKEY":       "NONE",
 	})
 
 	live := env["MOONTON_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["MOONTON_APIKEY"],
 		}
 		client := sdk.NewMoontonSDK(mergedOpts)
 

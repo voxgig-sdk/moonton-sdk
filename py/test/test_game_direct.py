@@ -61,12 +61,14 @@ def _game_direct_setup(mockres):
     env = runner.env_override({
         "MOONTON_TEST_GAME_ENTID": {},
         "MOONTON_TEST_LIVE": "FALSE",
+        "MOONTON_APIKEY": "NONE",
     })
 
     live = env.get("MOONTON_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("MOONTON_APIKEY"),
         }
         client = MoontonSDK(merged_opts)
         return {
