@@ -245,6 +245,9 @@ func (sdk *MoontonSDK) Direct(fetchargs map[string]any) (map[string]any, error) 
 }
 
 
+// Game returns a Game entity bound to this client.
+// Idiomatic usage: client.Game(nil).List(nil, nil) or
+// client.Game(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *MoontonSDK) Game(data map[string]any) MoontonEntity {
 	return NewGameEntityFunc(sdk, data)
 }

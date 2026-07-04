@@ -50,8 +50,7 @@ class GameEntityTest extends TestCase
         $game_ref01_ent = $client->Game(null);
         $game_ref01_match = [];
 
-        [$game_ref01_list_result, $err] = $game_ref01_ent->list($game_ref01_match, null);
-        $this->assertNull($err);
+        $game_ref01_list_result = $game_ref01_ent->list($game_ref01_match, null);
         $this->assertIsArray($game_ref01_list_result);
 
     }

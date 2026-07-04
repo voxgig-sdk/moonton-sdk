@@ -50,8 +50,7 @@ class TestGameEntity:
         game_ref01_ent = client.Game(None)
         game_ref01_match = {}
 
-        game_ref01_list_result, err = game_ref01_ent.list(game_ref01_match, None)
-        assert err is None
+        game_ref01_list_result = game_ref01_ent.list(game_ref01_match, None)
         assert isinstance(game_ref01_list_result, list)
 
 

@@ -43,8 +43,7 @@ class GameEntityTest < Minitest::Test
     game_ref01_ent = client.Game(nil)
     game_ref01_match = {}
 
-    game_ref01_list_result, err = game_ref01_ent.list(game_ref01_match, nil)
-    assert_nil err
+    game_ref01_list_result = game_ref01_ent.list(game_ref01_match, nil)
     assert game_ref01_list_result.is_a?(Array)
 
   end
