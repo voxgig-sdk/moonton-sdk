@@ -81,7 +81,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## GameEntity
 
 ```python
-game = client.game
+game = client.Game()
 ```
 
 ### Fields
@@ -104,7 +104,9 @@ game = client.game
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.game.list({})
+results = client.Game().list({})
+for game in results:
+    print(game)
 ```
 
 ### Common Methods

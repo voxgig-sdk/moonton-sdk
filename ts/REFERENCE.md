@@ -110,7 +110,7 @@ Alias for `MoontonSDK.test()`.
 ## GameEntity
 
 ```ts
-const game = client.game
+const game = client.Game()
 ```
 
 ### Fields
@@ -133,7 +133,7 @@ const game = client.game
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.game.list()
+const results = await client.Game().list()
 ```
 
 ### Common Methods
