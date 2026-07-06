@@ -117,14 +117,14 @@ const game = client.Game()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `active` | ``$BOOLEAN`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `genre` | ``$STRING`` | Yes |  |
-| `id` | ``$STRING`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `platform` | ``$ARRAY`` | No |  |
-| `player_count` | ``$INTEGER`` | No |  |
-| `release_date` | ``$STRING`` | No |  |
+| `active` | `boolean` | No |  |
+| `description` | `string` | No |  |
+| `genre` | `string` | Yes |  |
+| `id` | `string` | Yes |  |
+| `name` | `string` | Yes |  |
+| `platform` | `any[]` | No |  |
+| `player_count` | `number` | No |  |
+| `release_date` | `string` | No |  |
 
 ### Operations
 

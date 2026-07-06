@@ -88,23 +88,23 @@ game = client.Game()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `active` | ``$BOOLEAN`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `genre` | ``$STRING`` | Yes |  |
-| `id` | ``$STRING`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `platform` | ``$ARRAY`` | No |  |
-| `player_count` | ``$INTEGER`` | No |  |
-| `release_date` | ``$STRING`` | No |  |
+| `active` | `bool` | No |  |
+| `description` | `str` | No |  |
+| `genre` | `str` | Yes |  |
+| `id` | `str` | Yes |  |
+| `name` | `str` | Yes |  |
+| `platform` | `list` | No |  |
+| `player_count` | `int` | No |  |
+| `release_date` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Game().list({})
+results = client.Game().list()
 for game in results:
     print(game)
 ```

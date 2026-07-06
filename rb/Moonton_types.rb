@@ -45,7 +45,7 @@ Game = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Game#list (any subset of Game fields).
+# Request payload for Game#list.
 #
 # @!attribute [rw] active
 #   @return [Boolean, nil]

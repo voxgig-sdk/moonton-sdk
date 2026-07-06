@@ -8,7 +8,7 @@ Complete API reference for the Moonton Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'moonton_sdk'
+require_relative 'Moonton_sdk'
 
 client = MoontonSDK.new(options)
 ```
@@ -94,23 +94,23 @@ game = client.Game
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `active` | ``$BOOLEAN`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `genre` | ``$STRING`` | Yes |  |
-| `id` | ``$STRING`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `platform` | ``$ARRAY`` | No |  |
-| `player_count` | ``$INTEGER`` | No |  |
-| `release_date` | ``$STRING`` | No |  |
+| `active` | `Boolean` | No |  |
+| `description` | `String` | No |  |
+| `genre` | `String` | Yes |  |
+| `id` | `String` | Yes |  |
+| `name` | `String` | Yes |  |
+| `platform` | `Array` | No |  |
+| `player_count` | `Integer` | No |  |
+| `release_date` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Game.list(nil)
+results = client.Game.list
 ```
 
 ### Common Methods

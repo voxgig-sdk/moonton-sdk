@@ -16,5 +16,14 @@ export interface Game {
   release_date?: string
 }
 
-export type GameListMatch = Partial<Game>
+export interface GameListMatch {
+  active?: boolean
+  description?: string
+  genre?: string
+  id?: string
+  name?: string
+  platform?: any[]
+  player_count?: number
+  release_date?: string
+}
 

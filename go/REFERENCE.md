@@ -98,14 +98,14 @@ game := client.Game(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `active` | ``$BOOLEAN`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `genre` | ``$STRING`` | Yes |  |
-| `id` | ``$STRING`` | Yes |  |
-| `name` | ``$STRING`` | Yes |  |
-| `platform` | ``$ARRAY`` | No |  |
-| `player_count` | ``$INTEGER`` | No |  |
-| `release_date` | ``$STRING`` | No |  |
+| `active` | `bool` | No |  |
+| `description` | `string` | No |  |
+| `genre` | `string` | Yes |  |
+| `id` | `string` | Yes |  |
+| `name` | `string` | Yes |  |
+| `platform` | `[]any` | No |  |
+| `player_count` | `int` | No |  |
+| `release_date` | `string` | No |  |
 
 ### Operations
 

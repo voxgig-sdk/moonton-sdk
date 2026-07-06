@@ -17,6 +17,14 @@
 ---@field release_date? string
 
 ---@class GameListMatch
+---@field active? boolean
+---@field description? string
+---@field genre? string
+---@field id? string
+---@field name? string
+---@field platform? table
+---@field player_count? number
+---@field release_date? string
 
 local M = {}
 

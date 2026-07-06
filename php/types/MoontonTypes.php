@@ -25,7 +25,7 @@ class Game
     public ?string $release_date = null;
 }
 
-/** Match filter for Game#list (any subset of Game fields). */
+/** Request payload for Game#list. */
 class GameListMatch
 {
     public ?bool $active = null;

@@ -20,8 +20,7 @@ type Game struct {
 	ReleaseDate *string `json:"release_date,omitempty"`
 }
 
-// GameListMatch mirrors the game fields as an all-optional match
-// filter (Go analog of Partial<Game>).
+// GameListMatch is the typed request payload for Game.ListTyped.
 type GameListMatch struct {
 	Active *bool `json:"active,omitempty"`
 	Description *string `json:"description,omitempty"`
