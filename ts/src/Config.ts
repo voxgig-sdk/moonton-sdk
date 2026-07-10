@@ -39,7 +39,7 @@ class Config {
     base: 'https://api.moonton.com/v1',
 
     auth: {
-      prefix: 'Bearer',
+      prefix: '',
     },
 
     headers: {

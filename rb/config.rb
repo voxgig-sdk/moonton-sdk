@@ -16,7 +16,7 @@ module MoontonConfig
       "options" => {
         "base" => "https://api.moonton.com/v1",
         "auth" => {
-          "prefix" => "Bearer",
+          "prefix" => "",
         },
         "headers" => {
           "content-type" => "application/json",
