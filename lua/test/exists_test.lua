@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Moonton SDK exists test
 
 local sdk = require("moonton_sdk")
 
