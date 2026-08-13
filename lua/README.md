@@ -222,9 +222,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local game, err = client:Game():load()
+    local game, err = client:Game():list()
     if err then error(err) end
-    -- game is the loaded record
+    -- game is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -240,9 +240,9 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `genre` |  |
 | `id` |  |
 | `name` |  |
-| `platform` |  |
-| `player_count` |  |
-| `release_date` |  |
+| `platforms` |  |
+| `playerCount` |  |
+| `releaseDate` |  |
 
 Operations: List.
 
@@ -272,9 +272,9 @@ Create an instance: `local game = client:Game(nil)`
 | `genre` | `string` |  |
 | `id` | `string` |  |
 | `name` | `string` |  |
-| `platform` | `table` |  |
-| `player_count` | `number` |  |
-| `release_date` | `string` |  |
+| `platforms` | `table` |  |
+| `playerCount` | `number` |  |
+| `releaseDate` | `string` |  |
 
 #### Example: List
 

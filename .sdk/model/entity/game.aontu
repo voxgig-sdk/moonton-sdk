@@ -31,17 +31,17 @@ main: kit: entity: game: {
       type: "`$STRING`"
     }
     {
-      name: "platform"
+      name: "platforms"
       req: false
       type: "`$ARRAY`"
     }
     {
-      name: "player_count"
+      name: "playerCount"
       req: false
       type: "`$INTEGER`"
     }
     {
-      name: "release_date"
+      name: "releaseDate"
       req: false
       type: "`$STRING`"
     }
@@ -91,7 +91,7 @@ main: kit: entity: game: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.data`"
           }
         }
       ]

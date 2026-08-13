@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Moonton SDK exists test
 
 import pytest
 from moonton_sdk import MoontonSDK

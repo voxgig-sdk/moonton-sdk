@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import MoontonControl
-from core.error import MoontonError
-from core.result import MoontonResult
-from core.spec import MoontonSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import MoontonControl
+from projectname_sdk.core.error import MoontonError
+from projectname_sdk.core.result import MoontonResult
+from projectname_sdk.core.spec import MoontonSpec
 
 
 # True when this SDK was generated with the named feature.

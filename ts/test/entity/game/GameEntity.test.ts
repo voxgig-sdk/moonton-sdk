@@ -63,7 +63,7 @@ describe('GameEntity', async () => {
     const game_ref01_ent = client.Game()
     const game_ref01_match: any = {}
 
-    const game_ref01_list = await game_ref01_ent.list(game_ref01_match)
+    const game_ref01_list = (await game_ref01_ent.list(game_ref01_match)).map((e: any) => e.data())
 
 
   })

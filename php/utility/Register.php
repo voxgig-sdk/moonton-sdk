@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ MoontonUtility::setRegistrar(function (MoontonUtility $u): void {
     $u->prepare_params = [MoontonPrepareParams::class, 'call'];
     $u->prepare_path = [MoontonPreparePath::class, 'call'];
     $u->prepare_query = [MoontonPrepareQuery::class, 'call'];
+    $u->graphql_body = [MoontonGraphql::class, 'body'];
+    $u->graphql_errors = [MoontonGraphql::class, 'errors'];
     $u->result_basic = [MoontonResultBasic::class, 'call'];
     $u->result_body = [MoontonResultBody::class, 'call'];
     $u->result_headers = [MoontonResultHeaders::class, 'call'];

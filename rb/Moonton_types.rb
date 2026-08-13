@@ -25,13 +25,13 @@
 # @!attribute [rw] name
 #   @return [String]
 #
-# @!attribute [rw] platform
+# @!attribute [rw] platforms
 #   @return [Array, nil]
 #
-# @!attribute [rw] player_count
+# @!attribute [rw] playerCount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] release_date
+# @!attribute [rw] releaseDate
 #   @return [String, nil]
 Game = Struct.new(
   :active,
@@ -39,9 +39,9 @@ Game = Struct.new(
   :genre,
   :id,
   :name,
-  :platform,
-  :player_count,
-  :release_date,
+  :platforms,
+  :playerCount,
+  :releaseDate,
   keyword_init: true
 )
 
@@ -62,13 +62,13 @@ Game = Struct.new(
 # @!attribute [rw] name
 #   @return [String, nil]
 #
-# @!attribute [rw] platform
+# @!attribute [rw] platforms
 #   @return [Array, nil]
 #
-# @!attribute [rw] player_count
+# @!attribute [rw] playerCount
 #   @return [Integer, nil]
 #
-# @!attribute [rw] release_date
+# @!attribute [rw] releaseDate
 #   @return [String, nil]
 GameListMatch = Struct.new(
   :active,
@@ -76,9 +76,9 @@ GameListMatch = Struct.new(
   :genre,
   :id,
   :name,
-  :platform,
-  :player_count,
-  :release_date,
+  :platforms,
+  :playerCount,
+  :releaseDate,
   keyword_init: true
 )
 

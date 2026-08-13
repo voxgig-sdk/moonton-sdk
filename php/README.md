@@ -127,7 +127,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = MoontonSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $game = $client->Game()->list();
 print_r($game);
 ```
@@ -228,7 +229,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -255,9 +256,9 @@ On error, `ok` is `false` and `$err` contains the error value.
 | `genre` |  |
 | `id` |  |
 | `name` |  |
-| `platform` |  |
-| `player_count` |  |
-| `release_date` |  |
+| `platforms` |  |
+| `playerCount` |  |
+| `releaseDate` |  |
 
 Operations: List.
 
@@ -287,9 +288,9 @@ Create an instance: `$game = $client->Game();`
 | `genre` | `string` |  |
 | `id` | `string` |  |
 | `name` | `string` |  |
-| `platform` | `array` |  |
-| `player_count` | `int` |  |
-| `release_date` | `string` |  |
+| `platforms` | `array` |  |
+| `playerCount` | `int` |  |
+| `releaseDate` | `string` |  |
 
 #### Example: List
 

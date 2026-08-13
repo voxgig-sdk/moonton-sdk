@@ -104,9 +104,9 @@ fmt.Println(game.GetName()) // "game"
 | `genre` | `string` | Yes |  |
 | `id` | `string` | Yes |  |
 | `name` | `string` | Yes |  |
-| `platform` | `[]any` | No |  |
-| `player_count` | `int` | No |  |
-| `release_date` | `string` | No |  |
+| `platforms` | `[]any` | No |  |
+| `playerCount` | `int` | No |  |
+| `releaseDate` | `string` | No |  |
 
 ### Operations
 

@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from moonton_sdk.utility.voxgig_struct import voxgig_struct as vs
 from moonton_sdk import MoontonSDK
-from core import helpers
+from moonton_sdk.core import helpers
 from test import runner
 
 

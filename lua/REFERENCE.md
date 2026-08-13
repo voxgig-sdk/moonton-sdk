@@ -96,9 +96,9 @@ local game = client:Game(nil)
 | `genre` | `string` | Yes |  |
 | `id` | `string` | Yes |  |
 | `name` | `string` | Yes |  |
-| `platform` | `table` | No |  |
-| `player_count` | `number` | No |  |
-| `release_date` | `string` | No |  |
+| `platforms` | `table` | No |  |
+| `playerCount` | `number` | No |  |
+| `releaseDate` | `string` | No |  |
 
 ### Operations
 

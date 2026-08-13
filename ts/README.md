@@ -37,7 +37,9 @@ const client = new MoontonSDK({
 
 ### 2. List game records
 
-`list()` resolves to an array of Game objects — iterate it directly:
+`list()` resolves to an array of Game ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const games = await client.Game().list()
@@ -122,7 +124,8 @@ Create a mock client for unit testing — no server required:
 const client = MoontonSDK.test()
 
 const game = await client.Game().list()
-// game is a bare entity populated with mock response data
+// game is the entity, populated with mock response data
+// — call game.data() for the record itself
 console.log(game)
 ```
 
@@ -295,9 +298,9 @@ The `prepare()` method returns:
 | `genre` |  |
 | `id` |  |
 | `name` |  |
-| `platform` |  |
-| `player_count` |  |
-| `release_date` |  |
+| `platforms` |  |
+| `playerCount` |  |
+| `releaseDate` |  |
 
 Operations: list.
 
@@ -327,9 +330,9 @@ Create an instance: `const game = client.Game()`
 | `genre` | `string` |  |
 | `id` | `string` |  |
 | `name` | `string` |  |
-| `platform` | `any[]` |  |
-| `player_count` | `number` |  |
-| `release_date` | `string` |  |
+| `platforms` | `any[]` |  |
+| `playerCount` | `number` |  |
+| `releaseDate` | `string` |  |
 
 #### Example: List
 

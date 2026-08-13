@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = MoontonSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = MoontonSDK.test({
+  entity: {
+    game: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const games = await client.Game().list()
-// games is an array of bare Game records populated with mock data
+// games is an array of Game entities, populated with mock data
+// — call games[0].data() for the record itself
 console.log(games)
 ```
 
@@ -112,7 +121,7 @@ const client = new MoontonSDK({
   apikey: process.env.MOONTON_APIKEY,
 })
 
-// List all games (returns Game[])
+// List all games (returns GameEntity[] — .data() for the record)
 const games = await client.Game().list()
 for (const game of games) {
   console.log(game)
@@ -356,6 +365,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://en.moonton.com/games/index.html](https://en.moonton.com/games/index.html)
 

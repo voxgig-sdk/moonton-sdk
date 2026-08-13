@@ -270,9 +270,9 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | `"genre"` |  |
 | `"id"` |  |
 | `"name"` |  |
-| `"platform"` |  |
-| `"player_count"` |  |
-| `"release_date"` |  |
+| `"platforms"` |  |
+| `"playerCount"` |  |
+| `"releaseDate"` |  |
 
 Operations: List.
 
@@ -302,9 +302,9 @@ Create an instance: `game := client.Game(nil)`
 | `genre` | `string` |  |
 | `id` | `string` |  |
 | `name` | `string` |  |
-| `platform` | `[]any` |  |
-| `player_count` | `int` |  |
-| `release_date` | `string` |  |
+| `platforms` | `[]any` |  |
+| `playerCount` | `int` |  |
+| `releaseDate` | `string` |  |
 
 #### Example: List
 

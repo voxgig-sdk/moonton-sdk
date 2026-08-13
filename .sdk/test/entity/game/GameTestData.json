@@ -7,9 +7,9 @@
         "genre": "s52",
         "id": "GAME00",
         "name": "s54",
-        "platform": [],
-        "player_count": "s56",
-        "release_date": "s57"
+        "platforms": [],
+        "playerCount": "s56",
+        "releaseDate": "s57"
       },
       "GAME01": {
         "active": true,
@@ -17,9 +17,9 @@
         "genre": "sa2",
         "id": "GAME01",
         "name": "sa4",
-        "platform": [],
-        "player_count": "sa6",
-        "release_date": "sa7"
+        "platforms": [],
+        "playerCount": "sa6",
+        "releaseDate": "sa7"
       },
       "GAME02": {
         "active": true,
@@ -27,9 +27,9 @@
         "genre": "sf2",
         "id": "GAME02",
         "name": "sf4",
-        "platform": [],
-        "player_count": "sf6",
-        "release_date": "sf7"
+        "platforms": [],
+        "playerCount": "sf6",
+        "releaseDate": "sf7"
       }
     }
   },
@@ -40,9 +40,9 @@
         "description": "s141",
         "genre": "s142",
         "name": "s144",
-        "platform": [],
-        "player_count": "s146",
-        "release_date": "s147"
+        "platforms": [],
+        "playerCount": "s146",
+        "releaseDate": "s147"
       }
     }
   }

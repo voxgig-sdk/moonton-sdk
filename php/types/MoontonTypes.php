@@ -20,9 +20,9 @@ class Game
     public string $genre;
     public string $id;
     public string $name;
-    public ?array $platform = null;
-    public ?int $player_count = null;
-    public ?string $release_date = null;
+    public ?array $platforms = null;
+    public ?int $playerCount = null;
+    public ?string $releaseDate = null;
 }
 
 /** Request payload for Game#list. */
@@ -33,8 +33,8 @@ class GameListMatch
     public ?string $genre = null;
     public ?string $id = null;
     public ?string $name = null;
-    public ?array $platform = null;
-    public ?int $player_count = null;
-    public ?string $release_date = null;
+    public ?array $platforms = null;
+    public ?int $playerCount = null;
+    public ?string $releaseDate = null;
 }
 

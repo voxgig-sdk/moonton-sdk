@@ -12,9 +12,9 @@
 ---@field genre string
 ---@field id string
 ---@field name string
----@field platform? table
----@field player_count? number
----@field release_date? string
+---@field platforms? table
+---@field playerCount? number
+---@field releaseDate? string
 
 ---@class GameListMatch
 ---@field active? boolean
@@ -22,9 +22,9 @@
 ---@field genre? string
 ---@field id? string
 ---@field name? string
----@field platform? table
----@field player_count? number
----@field release_date? string
+---@field platforms? table
+---@field playerCount? number
+---@field releaseDate? string
 
 local M = {}
 

@@ -8,6 +8,7 @@ guide: {
   entity: game: {
     path: "/games": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
     }
   }
 

@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = MoontonSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 game = client.Game.list()
 puts game
 ```
@@ -245,9 +246,9 @@ returns a result `Hash` with these keys:
 | `genre` |  |
 | `id` |  |
 | `name` |  |
-| `platform` |  |
-| `player_count` |  |
-| `release_date` |  |
+| `platforms` |  |
+| `playerCount` |  |
+| `releaseDate` |  |
 
 Operations: List.
 
@@ -277,9 +278,9 @@ Create an instance: `game = client.Game`
 | `genre` | `String` |  |
 | `id` | `String` |  |
 | `name` | `String` |  |
-| `platform` | `Array` |  |
-| `player_count` | `Integer` |  |
-| `release_date` | `String` |  |
+| `platforms` | `Array` |  |
+| `playerCount` | `Integer` |  |
+| `releaseDate` | `String` |  |
 
 #### Example: List
 

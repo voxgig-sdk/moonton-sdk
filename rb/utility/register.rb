@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ MoontonUtility.registrar = ->(u) {
   u.prepare_params = MoontonUtilities::PrepareParams
   u.prepare_path = MoontonUtilities::PreparePath
   u.prepare_query = MoontonUtilities::PrepareQuery
+  u.graphql_body = MoontonUtilities::GraphqlBody
+  u.graphql_errors = MoontonUtilities::GraphqlErrors
   u.result_basic = MoontonUtilities::ResultBasic
   u.result_body = MoontonUtilities::ResultBody
   u.result_headers = MoontonUtilities::ResultHeaders

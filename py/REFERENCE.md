@@ -93,9 +93,9 @@ game = client.Game()
 | `genre` | `str` | Yes |  |
 | `id` | `str` | Yes |  |
 | `name` | `str` | Yes |  |
-| `platform` | `list` | No |  |
-| `player_count` | `int` | No |  |
-| `release_date` | `str` | No |  |
+| `platforms` | `list` | No |  |
+| `playerCount` | `int` | No |  |
+| `releaseDate` | `str` | No |  |
 
 ### Operations
 

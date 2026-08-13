@@ -98,9 +98,9 @@ $game = $client->Game();
 | `genre` | `string` | Yes |  |
 | `id` | `string` | Yes |  |
 | `name` | `string` | Yes |  |
-| `platform` | `array` | No |  |
-| `player_count` | `int` | No |  |
-| `release_date` | `string` | No |  |
+| `platforms` | `array` | No |  |
+| `playerCount` | `int` | No |  |
+| `releaseDate` | `string` | No |  |
 
 ### Operations
 

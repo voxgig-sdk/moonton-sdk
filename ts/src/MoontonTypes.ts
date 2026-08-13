@@ -11,9 +11,9 @@ export interface Game {
   genre: string
   id: string
   name: string
-  platform?: any[]
-  player_count?: number
-  release_date?: string
+  platforms?: any[]
+  playerCount?: number
+  releaseDate?: string
 }
 
 export interface GameListMatch {
@@ -22,8 +22,8 @@ export interface GameListMatch {
   genre?: string
   id?: string
   name?: string
-  platform?: any[]
-  player_count?: number
-  release_date?: string
+  platforms?: any[]
+  playerCount?: number
+  releaseDate?: string
 }
 

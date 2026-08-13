@@ -99,9 +99,9 @@ game = client.Game
 | `genre` | `String` | Yes |  |
 | `id` | `String` | Yes |  |
 | `name` | `String` | Yes |  |
-| `platform` | `Array` | No |  |
-| `player_count` | `Integer` | No |  |
-| `release_date` | `String` | No |  |
+| `platforms` | `Array` | No |  |
+| `playerCount` | `Integer` | No |  |
+| `releaseDate` | `String` | No |  |
 
 ### Operations
 

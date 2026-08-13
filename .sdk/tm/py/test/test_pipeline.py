@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import MoontonSDK
-from core.error import MoontonError
-from core.result import MoontonResult
-from core.response import MoontonResponse
-from core.spec import MoontonSpec
-from feature.base_feature import MoontonBaseFeature
+from projectname_sdk.core.error import MoontonError
+from projectname_sdk.core.result import MoontonResult
+from projectname_sdk.core.response import MoontonResponse
+from projectname_sdk.core.spec import MoontonSpec
+from projectname_sdk.feature.base_feature import MoontonBaseFeature
 
 
 def _client():

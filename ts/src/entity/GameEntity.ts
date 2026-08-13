@@ -37,7 +37,7 @@ class GameEntity extends MoontonEntityBase<Game> {
 
 
 
-  async list(this: any, reqmatch?: GameListMatch, ctrl?: Control): Promise<Game[]> {
+  async list(this: any, reqmatch?: GameListMatch, ctrl?: Control): Promise<GameEntity[]> {
 
     const utility = this._utility
 
