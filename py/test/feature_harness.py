@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from moonton_sdk.config import make_config
+from moonton_sdk.config import shared_config
 from moonton_sdk.features import _make_feature
 from moonton_sdk.core.control import MoontonControl
 from moonton_sdk.core.error import MoontonError
@@ -24,7 +24,7 @@ from moonton_sdk.core.spec import MoontonSpec
 
 # True when this SDK was generated with the named feature.
 def has_feature(name):
-    feature = make_config().get("feature")
+    feature = shared_config().get("feature")
     return isinstance(feature, dict) and feature.get(name) is not None
 
 

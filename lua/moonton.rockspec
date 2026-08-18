@@ -23,6 +23,7 @@ build = {
   modules = {
     ["moonton_sdk"] = "moonton_sdk.lua",
     ["config"] = "config.lua",
+    ["config_shared"] = "config_shared.lua",
     ["features"] = "features.lua",
   }
 }

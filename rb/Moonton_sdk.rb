@@ -28,7 +28,7 @@ class MoontonSDK
     utility = MoontonUtility.new
     @_utility = utility
 
-    config = MoontonConfig.make_config
+    config = MoontonConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
