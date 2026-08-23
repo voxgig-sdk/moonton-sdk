@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -293,14 +293,14 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `active` |  |
-| `description` |  |
-| `genre` |  |
-| `id` |  |
-| `name` |  |
-| `platforms` |  |
-| `playerCount` |  |
-| `releaseDate` |  |
+| `active` | Whether the game is currently active |
+| `description` | Brief description of the game |
+| `genre` | Game genre |
+| `id` | Unique identifier for the game |
+| `name` | Name of the game |
+| `platforms` | Platforms where the game is available |
+| `playerCount` | Current active player count |
+| `releaseDate` | Release date of the game |
 
 Operations: list.
 
@@ -325,14 +325,14 @@ Create an instance: `const game = client.Game()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `active` | `boolean` |  |
-| `description` | `string` |  |
-| `genre` | `string` |  |
-| `id` | `string` |  |
-| `name` | `string` |  |
-| `platforms` | `any[]` |  |
-| `playerCount` | `number` |  |
-| `releaseDate` | `string` |  |
+| `active` | `boolean` | Whether the game is currently active |
+| `description` | `string` | Brief description of the game |
+| `genre` | `string` | Game genre |
+| `id` | `string` | Unique identifier for the game |
+| `name` | `string` | Name of the game |
+| `platforms` | `any[]` | Platforms where the game is available |
+| `playerCount` | `number` | Current active player count |
+| `releaseDate` | `string` | Release date of the game |
 
 #### Example: List
 

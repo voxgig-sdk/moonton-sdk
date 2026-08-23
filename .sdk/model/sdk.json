@@ -36,48 +36,56 @@
               "active": true,
               "name": "active",
               "req": false,
+              "short": "Whether the game is currently active",
               "type": "`$BOOLEAN`"
             },
             {
               "active": true,
               "name": "description",
               "req": false,
+              "short": "Brief description of the game",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "genre",
               "req": true,
+              "short": "Game genre",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "id",
               "req": true,
+              "short": "Unique identifier for the game",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "name",
               "req": true,
+              "short": "Name of the game",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "platforms",
               "req": false,
+              "short": "Platforms where the game is available",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "playerCount",
               "req": false,
+              "short": "Current active player count",
               "type": "`$INTEGER`"
             },
             {
               "active": true,
               "name": "releaseDate",
               "req": false,
+              "short": "Release date of the game",
               "type": "`$STRING`"
             }
           ],

@@ -19,6 +19,9 @@ module MoontonConfig
     {
       "main" => {
         "name" => "Moonton",
+        "slug" => "moonton",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -44,37 +47,45 @@ module MoontonConfig
           "fields" => [
             {
               "name" => "active",
+              "short" => "Whether the game is currently active",
               "type" => "`$BOOLEAN`",
             },
             {
               "name" => "description",
+              "short" => "Brief description of the game",
               "type" => "`$STRING`",
             },
             {
               "name" => "genre",
               "req" => true,
+              "short" => "Game genre",
               "type" => "`$STRING`",
             },
             {
               "name" => "id",
               "req" => true,
+              "short" => "Unique identifier for the game",
               "type" => "`$STRING`",
             },
             {
               "name" => "name",
               "req" => true,
+              "short" => "Name of the game",
               "type" => "`$STRING`",
             },
             {
               "name" => "platforms",
+              "short" => "Platforms where the game is available",
               "type" => "`$ARRAY`",
             },
             {
               "name" => "playerCount",
+              "short" => "Current active player count",
               "type" => "`$INTEGER`",
             },
             {
               "name" => "releaseDate",
+              "short" => "Release date of the game",
               "type" => "`$STRING`",
             },
           ],

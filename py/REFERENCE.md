@@ -88,14 +88,14 @@ game = client.Game()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `active` | `bool` | No |  |
-| `description` | `str` | No |  |
-| `genre` | `str` | Yes |  |
-| `id` | `str` | Yes |  |
-| `name` | `str` | Yes |  |
-| `platforms` | `list` | No |  |
-| `playerCount` | `int` | No |  |
-| `releaseDate` | `str` | No |  |
+| `active` | `bool` | No | Whether the game is currently active |
+| `description` | `str` | No | Brief description of the game |
+| `genre` | `str` | Yes | Game genre |
+| `id` | `str` | Yes | Unique identifier for the game |
+| `name` | `str` | Yes | Name of the game |
+| `platforms` | `list` | No | Platforms where the game is available |
+| `playerCount` | `int` | No | Current active player count |
+| `releaseDate` | `str` | No | Release date of the game |
 
 ### Operations
 

@@ -99,14 +99,14 @@ fmt.Println(game.GetName()) // "game"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `active` | `bool` | No |  |
-| `description` | `string` | No |  |
-| `genre` | `string` | Yes |  |
-| `id` | `string` | Yes |  |
-| `name` | `string` | Yes |  |
-| `platforms` | `[]any` | No |  |
-| `playerCount` | `int` | No |  |
-| `releaseDate` | `string` | No |  |
+| `active` | `bool` | No | Whether the game is currently active |
+| `description` | `string` | No | Brief description of the game |
+| `genre` | `string` | Yes | Game genre |
+| `id` | `string` | Yes | Unique identifier for the game |
+| `name` | `string` | Yes | Name of the game |
+| `platforms` | `[]any` | No | Platforms where the game is available |
+| `playerCount` | `int` | No | Current active player count |
+| `releaseDate` | `string` | No | Release date of the game |
 
 ### Operations
 

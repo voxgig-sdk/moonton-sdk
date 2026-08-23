@@ -251,14 +251,14 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `active` |  |
-| `description` |  |
-| `genre` |  |
-| `id` |  |
-| `name` |  |
-| `platforms` |  |
-| `playerCount` |  |
-| `releaseDate` |  |
+| `active` | Whether the game is currently active |
+| `description` | Brief description of the game |
+| `genre` | Game genre |
+| `id` | Unique identifier for the game |
+| `name` | Name of the game |
+| `platforms` | Platforms where the game is available |
+| `playerCount` | Current active player count |
+| `releaseDate` | Release date of the game |
 
 Operations: List.
 
@@ -283,14 +283,14 @@ Create an instance: `$game = $client->Game();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `active` | `bool` |  |
-| `description` | `string` |  |
-| `genre` | `string` |  |
-| `id` | `string` |  |
-| `name` | `string` |  |
-| `platforms` | `array` |  |
-| `playerCount` | `int` |  |
-| `releaseDate` | `string` |  |
+| `active` | `bool` | Whether the game is currently active |
+| `description` | `string` | Brief description of the game |
+| `genre` | `string` | Game genre |
+| `id` | `string` | Unique identifier for the game |
+| `name` | `string` | Name of the game |
+| `platforms` | `array` | Platforms where the game is available |
+| `playerCount` | `int` | Current active player count |
+| `releaseDate` | `string` | Release date of the game |
 
 #### Example: List
 

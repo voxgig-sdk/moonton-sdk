@@ -6,7 +6,7 @@ The Golang SDK for the Moonton API — an entity-oriented client using standard 
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Game(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -265,14 +265,14 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"active"` |  |
-| `"description"` |  |
-| `"genre"` |  |
-| `"id"` |  |
-| `"name"` |  |
-| `"platforms"` |  |
-| `"playerCount"` |  |
-| `"releaseDate"` |  |
+| `"active"` | Whether the game is currently active |
+| `"description"` | Brief description of the game |
+| `"genre"` | Game genre |
+| `"id"` | Unique identifier for the game |
+| `"name"` | Name of the game |
+| `"platforms"` | Platforms where the game is available |
+| `"playerCount"` | Current active player count |
+| `"releaseDate"` | Release date of the game |
 
 Operations: List.
 
@@ -297,14 +297,14 @@ Create an instance: `game := client.Game(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `active` | `bool` |  |
-| `description` | `string` |  |
-| `genre` | `string` |  |
-| `id` | `string` |  |
-| `name` | `string` |  |
-| `platforms` | `[]any` |  |
-| `playerCount` | `int` |  |
-| `releaseDate` | `string` |  |
+| `active` | `bool` | Whether the game is currently active |
+| `description` | `string` | Brief description of the game |
+| `genre` | `string` | Game genre |
+| `id` | `string` | Unique identifier for the game |
+| `name` | `string` | Name of the game |
+| `platforms` | `[]any` | Platforms where the game is available |
+| `playerCount` | `int` | Current active player count |
+| `releaseDate` | `string` | Release date of the game |
 
 #### Example: List
 

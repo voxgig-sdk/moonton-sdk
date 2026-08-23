@@ -235,14 +235,14 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `active` |  |
-| `description` |  |
-| `genre` |  |
-| `id` |  |
-| `name` |  |
-| `platforms` |  |
-| `playerCount` |  |
-| `releaseDate` |  |
+| `active` | Whether the game is currently active |
+| `description` | Brief description of the game |
+| `genre` | Game genre |
+| `id` | Unique identifier for the game |
+| `name` | Name of the game |
+| `platforms` | Platforms where the game is available |
+| `playerCount` | Current active player count |
+| `releaseDate` | Release date of the game |
 
 Operations: List.
 
@@ -267,14 +267,14 @@ Create an instance: `local game = client:Game(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `active` | `boolean` |  |
-| `description` | `string` |  |
-| `genre` | `string` |  |
-| `id` | `string` |  |
-| `name` | `string` |  |
-| `platforms` | `table` |  |
-| `playerCount` | `number` |  |
-| `releaseDate` | `string` |  |
+| `active` | `boolean` | Whether the game is currently active |
+| `description` | `string` | Brief description of the game |
+| `genre` | `string` | Game genre |
+| `id` | `string` | Unique identifier for the game |
+| `name` | `string` | Name of the game |
+| `platforms` | `table` | Platforms where the game is available |
+| `playerCount` | `number` | Current active player count |
+| `releaseDate` | `string` | Release date of the game |
 
 #### Example: List
 

@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'Moonton',
+        slug: "moonton",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -60,37 +71,45 @@ class Config {
       "fields": [
         {
           "name": "active",
+          "short": "Whether the game is currently active",
           "type": "`$BOOLEAN`"
         },
         {
           "name": "description",
+          "short": "Brief description of the game",
           "type": "`$STRING`"
         },
         {
           "name": "genre",
           "req": true,
+          "short": "Game genre",
           "type": "`$STRING`"
         },
         {
           "name": "id",
           "req": true,
+          "short": "Unique identifier for the game",
           "type": "`$STRING`"
         },
         {
           "name": "name",
           "req": true,
+          "short": "Name of the game",
           "type": "`$STRING`"
         },
         {
           "name": "platforms",
+          "short": "Platforms where the game is available",
           "type": "`$ARRAY`"
         },
         {
           "name": "playerCount",
+          "short": "Current active player count",
           "type": "`$INTEGER`"
         },
         {
           "name": "releaseDate",
+          "short": "Release date of the game",
           "type": "`$STRING`"
         }
       ],

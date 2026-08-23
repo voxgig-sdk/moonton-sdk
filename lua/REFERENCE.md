@@ -91,14 +91,14 @@ local game = client:Game(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `active` | `boolean` | No |  |
-| `description` | `string` | No |  |
-| `genre` | `string` | Yes |  |
-| `id` | `string` | Yes |  |
-| `name` | `string` | Yes |  |
-| `platforms` | `table` | No |  |
-| `playerCount` | `number` | No |  |
-| `releaseDate` | `string` | No |  |
+| `active` | `boolean` | No | Whether the game is currently active |
+| `description` | `string` | No | Brief description of the game |
+| `genre` | `string` | Yes | Game genre |
+| `id` | `string` | Yes | Unique identifier for the game |
+| `name` | `string` | Yes | Name of the game |
+| `platforms` | `table` | No | Platforms where the game is available |
+| `playerCount` | `number` | No | Current active player count |
+| `releaseDate` | `string` | No | Release date of the game |
 
 ### Operations
 

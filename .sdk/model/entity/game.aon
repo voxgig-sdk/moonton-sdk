@@ -8,41 +8,49 @@ main: kit: entity: game: {
     {
       name: "active"
       req: false
+      short: "Whether the game is currently active"
       type: "`$BOOLEAN`"
     }
     {
       name: "description"
       req: false
+      short: "Brief description of the game"
       type: "`$STRING`"
     }
     {
       name: "genre"
       req: true
+      short: "Game genre"
       type: "`$STRING`"
     }
     {
       name: "id"
       req: true
+      short: "Unique identifier for the game"
       type: "`$STRING`"
     }
     {
       name: "name"
       req: true
+      short: "Name of the game"
       type: "`$STRING`"
     }
     {
       name: "platforms"
       req: false
+      short: "Platforms where the game is available"
       type: "`$ARRAY`"
     }
     {
       name: "playerCount"
       req: false
+      short: "Current active player count"
       type: "`$INTEGER`"
     }
     {
       name: "releaseDate"
       req: false
+      short: "Release date of the game"
       type: "`$STRING`"
     }
   ]

@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Moonton",
+			"slug": "moonton",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -36,37 +39,45 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "active",
+						"short": "Whether the game is currently active",
 						"type": "`$BOOLEAN`",
 					},
 					map[string]any{
 						"name": "description",
+						"short": "Brief description of the game",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "genre",
 						"req": true,
+						"short": "Game genre",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
 						"req": true,
+						"short": "Unique identifier for the game",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
 						"req": true,
+						"short": "Name of the game",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "platforms",
+						"short": "Platforms where the game is available",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "playerCount",
+						"short": "Current active player count",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "releaseDate",
+						"short": "Release date of the game",
 						"type": "`$STRING`",
 					},
 				},

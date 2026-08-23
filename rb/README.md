@@ -241,14 +241,14 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `active` |  |
-| `description` |  |
-| `genre` |  |
-| `id` |  |
-| `name` |  |
-| `platforms` |  |
-| `playerCount` |  |
-| `releaseDate` |  |
+| `active` | Whether the game is currently active |
+| `description` | Brief description of the game |
+| `genre` | Game genre |
+| `id` | Unique identifier for the game |
+| `name` | Name of the game |
+| `platforms` | Platforms where the game is available |
+| `playerCount` | Current active player count |
+| `releaseDate` | Release date of the game |
 
 Operations: List.
 
@@ -273,14 +273,14 @@ Create an instance: `game = client.Game`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `active` | `Boolean` |  |
-| `description` | `String` |  |
-| `genre` | `String` |  |
-| `id` | `String` |  |
-| `name` | `String` |  |
-| `platforms` | `Array` |  |
-| `playerCount` | `Integer` |  |
-| `releaseDate` | `String` |  |
+| `active` | `Boolean` | Whether the game is currently active |
+| `description` | `String` | Brief description of the game |
+| `genre` | `String` | Game genre |
+| `id` | `String` | Unique identifier for the game |
+| `name` | `String` | Name of the game |
+| `platforms` | `Array` | Platforms where the game is available |
+| `playerCount` | `Integer` | Current active player count |
+| `releaseDate` | `String` | Release date of the game |
 
 #### Example: List
 

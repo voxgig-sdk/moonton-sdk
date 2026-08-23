@@ -248,14 +248,14 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `active` |  |
-| `description` |  |
-| `genre` |  |
-| `id` |  |
-| `name` |  |
-| `platforms` |  |
-| `playerCount` |  |
-| `releaseDate` |  |
+| `active` | Whether the game is currently active |
+| `description` | Brief description of the game |
+| `genre` | Game genre |
+| `id` | Unique identifier for the game |
+| `name` | Name of the game |
+| `platforms` | Platforms where the game is available |
+| `playerCount` | Current active player count |
+| `releaseDate` | Release date of the game |
 
 Operations: List.
 
@@ -280,14 +280,14 @@ Create an instance: `game = client.Game()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `active` | `bool` |  |
-| `description` | `str` |  |
-| `genre` | `str` |  |
-| `id` | `str` |  |
-| `name` | `str` |  |
-| `platforms` | `list` |  |
-| `playerCount` | `int` |  |
-| `releaseDate` | `str` |  |
+| `active` | `bool` | Whether the game is currently active |
+| `description` | `str` | Brief description of the game |
+| `genre` | `str` | Game genre |
+| `id` | `str` | Unique identifier for the game |
+| `name` | `str` | Name of the game |
+| `platforms` | `list` | Platforms where the game is available |
+| `playerCount` | `int` | Current active player count |
+| `releaseDate` | `str` | Release date of the game |
 
 #### Example: List
 
