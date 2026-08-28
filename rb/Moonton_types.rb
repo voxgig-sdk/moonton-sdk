@@ -47,38 +47,14 @@ Game = Struct.new(
 
 # Request payload for Game#list.
 #
-# @!attribute [rw] active
-#   @return [Boolean, nil]
-#
-# @!attribute [rw] description
-#   @return [String, nil]
-#
-# @!attribute [rw] genre
-#   @return [String, nil]
-#
-# @!attribute [rw] id
-#   @return [String, nil]
-#
-# @!attribute [rw] name
-#   @return [String, nil]
-#
-# @!attribute [rw] platforms
-#   @return [Array, nil]
-#
-# @!attribute [rw] playerCount
+# @!attribute [rw] limit
 #   @return [Integer, nil]
 #
-# @!attribute [rw] releaseDate
-#   @return [String, nil]
+# @!attribute [rw] offset
+#   @return [Integer, nil]
 GameListMatch = Struct.new(
-  :active,
-  :description,
-  :genre,
-  :id,
-  :name,
-  :platforms,
-  :playerCount,
-  :releaseDate,
+  :limit,
+  :offset,
   keyword_init: true
 )
 

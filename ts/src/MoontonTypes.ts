@@ -17,13 +17,7 @@ export interface Game {
 }
 
 export interface GameListMatch {
-  active?: boolean
-  description?: string
-  genre?: string
-  id?: string
-  name?: string
-  platforms?: any[]
-  playerCount?: number
-  releaseDate?: string
+  limit?: number
+  offset?: number
 }
 

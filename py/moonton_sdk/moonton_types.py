@@ -31,11 +31,5 @@ class Game(GameRequired, total=False):
 
 
 class GameListMatch(TypedDict, total=False):
-    active: bool
-    description: str
-    genre: str
-    id: str
-    name: str
-    platforms: list
-    playerCount: int
-    releaseDate: str
+    limit: int
+    offset: int

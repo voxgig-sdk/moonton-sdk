@@ -28,13 +28,7 @@ class Game
 /** Request payload for Game#list. */
 class GameListMatch
 {
-    public ?bool $active = null;
-    public ?string $description = null;
-    public ?string $genre = null;
-    public ?string $id = null;
-    public ?string $name = null;
-    public ?array $platforms = null;
-    public ?int $playerCount = null;
-    public ?string $releaseDate = null;
+    public ?int $limit = null;
+    public ?int $offset = null;
 }
 
