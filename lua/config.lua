@@ -73,10 +73,15 @@ local function make_config()
             ["type"] = "`$INTEGER`",
           },
           {
+            ["format"] = "date",
             ["name"] = "releaseDate",
             ["short"] = "Release date of the game",
             ["type"] = "`$STRING`",
           },
+        },
+        ["id"] = {
+          ["field"] = "id",
+          ["name"] = "id",
         },
         ["name"] = "game",
         ["op"] = {
@@ -106,8 +111,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/games",
-                ["parts"] = {
-                  "games",
+                ["segments"] = {
+                  {
+                    ["lit"] = "games",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -118,6 +125,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body.data`",
+                },
+                ["parts"] = {
+                  "games",
                 },
               },
             },

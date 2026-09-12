@@ -48,6 +48,7 @@ main: kit: entity: game: {
       type: "`$INTEGER`"
     }
     {
+      format: "date"
       name: "releaseDate"
       req: false
       short: "Release date of the game"
@@ -88,8 +89,10 @@ main: kit: entity: game: {
           }
           method: "GET"
           orig: "/games"
-          parts: [
-            "games"
+          segments: [
+            {
+              lit: "games"
+            }
           ]
           select: {
             exist: [

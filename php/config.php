@@ -99,10 +99,15 @@ class MoontonConfig
               'type' => '`$INTEGER`',
             ],
             [
+              'format' => 'date',
               'name' => 'releaseDate',
               'short' => 'Release date of the game',
               'type' => '`$STRING`',
             ],
+          ],
+          'id' => [
+            'field' => 'id',
+            'name' => 'id',
           ],
           'name' => 'game',
           'op' => [
@@ -132,8 +137,10 @@ class MoontonConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/games',
-                  'parts' => [
-                    'games',
+                  'segments' => [
+                    [
+                      'lit' => 'games',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -144,6 +151,9 @@ class MoontonConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body.data`',
+                  ],
+                  'parts' => [
+                    'games',
                   ],
                 ],
               ],

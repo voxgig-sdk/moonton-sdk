@@ -124,7 +124,7 @@ function game_basic_setup($extra)
         "MOONTON_TEST_GAME_ENTID" => $idmap,
         "MOONTON_TEST_LIVE" => "FALSE",
         "MOONTON_TEST_EXPLAIN" => "FALSE",
-        "MOONTON_APIKEY" => "NONE",
+        "MOONTON_APIKEY" => "",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -135,10 +135,17 @@ function game_basic_setup($extra)
 
     if ($env["MOONTON_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
+            // FIRST, so the generated fields below win: sdk-test-control.json's
+            // test.client.options adds to the live client, it does not redirect it.
+            Runner::live_client_options(),
             [
                 "apikey" => $env["MOONTON_APIKEY"],
             ],
-            $extra ?? [],
+            // ismap, not a plain "?? []" default: an empty PHP array is a
+            // LIST, and a non-map later entry REPLACES the accumulated map in
+            // merge - so the no-extras call discarded live_client_options()
+            // and the apikey/server map above it.
+            Vs::ismap($extra) ? $extra : new \stdClass(),
         ]);
         $client = new MoontonSDK(Helpers::to_map($merged_opts));
     }

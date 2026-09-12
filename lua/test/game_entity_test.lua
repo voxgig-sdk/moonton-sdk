@@ -133,7 +133,7 @@ function game_basic_setup(extra)
     ["MOONTON_TEST_GAME_ENTID"] = idmap,
     ["MOONTON_TEST_LIVE"] = "FALSE",
     ["MOONTON_TEST_EXPLAIN"] = "FALSE",
-    ["MOONTON_APIKEY"] = "NONE",
+    ["MOONTON_APIKEY"] = "",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -144,6 +144,9 @@ function game_basic_setup(extra)
 
   if env["MOONTON_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
+      -- FIRST, so the generated fields below win: sdk-test-control.json's
+      -- test.client.options adds to the live client, it does not redirect it.
+      runner.live_client_options(),
       {
         apikey = env["MOONTON_APIKEY"],
       },
