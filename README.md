@@ -105,7 +105,7 @@ local results, err = client:Game():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/moonton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/moonton-sdk/releases) |
+| TypeScript | `@voxgig-sdk/moonton-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/moonton-sdk/releases) |
 | Python | `voxgig-sdk-moonton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/moonton-sdk/releases) |
 | PHP | `voxgig-sdk/moonton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/moonton-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/moonton-sdk/go` | `go get github.com/voxgig-sdk/moonton-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Game():list()
 ### TypeScript
 
 ```ts
-import { MoontonSDK } from '@voxgig-sdk/moonton'
+import { MoontonSDK } from '@voxgig-sdk/moonton-sdk'
 
 const client = new MoontonSDK({
   apikey: process.env.MOONTON_APIKEY,

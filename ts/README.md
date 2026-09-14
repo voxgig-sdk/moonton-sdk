@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { MoontonSDK } from '@voxgig-sdk/moonton'
+import { MoontonSDK } from '@voxgig-sdk/moonton-sdk'
 
 const client = new MoontonSDK({
   apikey: process.env.MOONTON_APIKEY,
@@ -423,7 +423,7 @@ moonton/
 Import the SDK from the package root:
 
 ```ts
-import { MoontonSDK } from '@voxgig-sdk/moonton'
+import { MoontonSDK } from '@voxgig-sdk/moonton-sdk'
 ```
 
 ### Entity state
