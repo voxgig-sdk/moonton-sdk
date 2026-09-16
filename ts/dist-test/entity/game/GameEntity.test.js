@@ -40,6 +40,8 @@ const node_path_1 = __importDefault(require("node:path"));
 const Fs = __importStar(require("node:fs"));
 const node_test_1 = require("node:test");
 const node_assert_1 = __importDefault(require("node:assert"));
+const live_runner_1 = require("../../live-runner");
+const live_entity_1 = require("../../live-entity");
 const __1 = require("../../..");
 const utility_1 = require("../../utility");
 // AFTER the imports on purpose: TypeScript hoists `import` above any
@@ -59,16 +61,12 @@ const utility_1 = require("../../utility");
     (0, node_test_1.test)('basic', async (t) => {
         const live = 'TRUE' === process.env.MOONTON_TEST_LIVE;
         for (const op of ['list']) {
-            if ((0, utility_1.maybeSkipControl)(t, 'entityOp', 'game.' + op, live))
+            if (!live && (0, utility_1.maybeSkipControl)(t, 'entityOp', 'game.' + op, live))
                 return;
         }
         const setup = basicSetup();
-        // The basic flow consumes synthetic IDs and field values from the
-        // fixture (entity TestData.json). Those don't exist on the live API.
-        // Skip live runs unless the user provided a real ENTID env override.
-        if (setup.syntheticOnly) {
-            t.skip('live entity test uses synthetic IDs from fixture — set MOONTON_TEST_GAME_ENTID JSON to run live');
-            return;
+        if (setup.live) {
+            return (0, live_entity_1.runLiveEntity)(setup, { "active": true, "alias": { "field": {} }, "fields": [{ "active": true, "name": "active", "req": false, "short": "Whether the game is currently active", "type": "`$BOOLEAN`", "index$": 0 }, { "active": true, "name": "description", "req": false, "short": "Brief description of the game", "type": "`$STRING`", "index$": 1 }, { "active": true, "name": "genre", "req": true, "short": "Game genre", "type": "`$STRING`", "index$": 2 }, { "active": true, "name": "id", "req": true, "short": "Unique identifier for the game", "type": "`$STRING`", "index$": 3 }, { "active": true, "name": "name", "req": true, "short": "Name of the game", "type": "`$STRING`", "index$": 4 }, { "active": true, "name": "platforms", "req": false, "short": "Platforms where the game is available", "type": "`$ARRAY`", "index$": 5 }, { "active": true, "name": "playerCount", "req": false, "short": "Current active player count", "type": "`$INTEGER`", "index$": 6 }, { "active": true, "format": "date", "name": "releaseDate", "req": false, "short": "Release date of the game", "type": "`$STRING`", "index$": 7 }], "id": { "field": "id", "name": "id" }, "name": "game", "op": { "list": { "input": "data", "name": "list", "points": [{ "active": true, "args": { "query": [{ "active": true, "example": 10, "kind": "query", "name": "limit", "orig": "limit", "reqd": false, "type": "`$INTEGER`", "index$": 0 }, { "active": true, "example": 0, "kind": "query", "name": "offset", "orig": "offset", "reqd": false, "type": "`$INTEGER`", "index$": 1 }] }, "contract": { "id": "GET /games", "json": "{\"operationId\":\"getGames\",\"parameters\":[{\"description\":\"Maximum number of games to return\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":10,\"maximum\":100,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"Number of games to skip for pagination\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"minimum\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"data\":{\"items\":{\"properties\":{\"active\":{\"description\":\"Whether the game is currently active\",\"example\":true,\"type\":\"boolean\"},\"description\":{\"description\":\"Brief description of the game\",\"example\":\"5v5 MOBA game for mobile devices\",\"type\":\"string\"},\"genre\":{\"description\":\"Game genre\",\"example\":\"MOBA\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the game\",\"example\":\"mlbb_001\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the game\",\"example\":\"Mobile Legends: Bang Bang\",\"type\":\"string\"},\"platforms\":{\"description\":\"Platforms where the game is available\",\"example\":[\"iOS\",\"Android\"],\"items\":{\"enum\":[\"iOS\",\"Android\",\"PC\"],\"type\":\"string\"},\"type\":\"array\"},\"playerCount\":{\"description\":\"Current active player count\",\"example\":100000000,\"type\":\"integer\"},\"releaseDate\":{\"description\":\"Release date of the game\",\"example\":\"2016-07-14\",\"format\":\"date\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"genre\"],\"type\":\"object\"},\"type\":\"array\"},\"success\":{\"example\":true,\"type\":\"boolean\"},\"total\":{\"description\":\"Total number of games available\",\"example\":15,\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response with games list\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"example\":\"INVALID_REQUEST\",\"type\":\"string\"},\"message\":{\"description\":\"Human-readable error message\",\"example\":\"The request parameters are invalid\",\"type\":\"string\"}},\"type\":\"object\"},\"success\":{\"example\":false,\"type\":\"boolean\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"example\":\"INVALID_REQUEST\",\"type\":\"string\"},\"message\":{\"description\":\"Human-readable error message\",\"example\":\"The request parameters are invalid\",\"type\":\"string\"}},\"type\":\"object\"},\"success\":{\"example\":false,\"type\":\"boolean\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Invalid or missing API key\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"example\":\"INVALID_REQUEST\",\"type\":\"string\"},\"message\":{\"description\":\"Human-readable error message\",\"example\":\"The request parameters are invalid\",\"type\":\"string\"}},\"type\":\"object\"},\"success\":{\"example\":false,\"type\":\"boolean\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"ApiKeyAuth\":[]}],\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key for authentication. Contact Moonton to obtain your API key.\",\"in\":\"header\",\"name\":\"X-API-Key\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}", "source": "openapi3", "version": 1 }, "kind": "http", "method": "GET", "orig": "/games", "segments": [{ "lit": "games" }], "select": { "exist": ["limit", "offset"] }, "transform": { "req": "`reqdata`", "res": "`body.data`" }, "index$": 0 }], "key$": "list" } }, "relations": { "ancestors": [] }, "key$": "game", "name__orig": "game", "Name": "Game", "name_": "game", "name-": "game", "NAME": "GAME", "index$": 0 }, { "active": true, "entity": "game", "key$": "BasicGameFlow", "kind": "basic", "name": "BasicGameFlow", "param": {}, "step": [{ "active": true, "data": {}, "input": {}, "match": {}, "op": "list", "spec": [], "valid": [{ "apply": "ItemExists", "def": { "ref": "game_ref01" } }], "index$": 0 }] }, 'Game');
         }
         const client = setup.client;
         const struct = setup.struct;
@@ -101,12 +99,6 @@ function basicSetup(extra) {
                 '`$VAL`': ['`$FORMAT`', 'upper', '`$COPY`']
             }]
     });
-    // Detect whether the user provided a real ENTID JSON via env var. The
-    // basic flow consumes synthetic IDs from the fixture file; without an
-    // override those synthetic IDs reach the live API and 4xx. Surface this
-    // to the test so it can skip rather than fail.
-    const idmapEnvVal = process.env['MOONTON_TEST_GAME_ENTID'];
-    const idmapOverridden = null != idmapEnvVal && idmapEnvVal.trim().startsWith('{');
     const env = (0, utility_1.envOverride)({
         'MOONTON_TEST_GAME_ENTID': idmap,
         'MOONTON_TEST_LIVE': 'FALSE',
@@ -115,7 +107,13 @@ function basicSetup(extra) {
     });
     idmap = env['MOONTON_TEST_GAME_ENTID'];
     const live = 'TRUE' === env.MOONTON_TEST_LIVE;
+    const transport = (0, live_runner_1.createLiveTransport)();
     if (live) {
+        const rawIds = process.env['MOONTON_TEST_GAME_ENTID'];
+        idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {};
+        if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+            throw new Error('Live ENTID must be a JSON object');
+        }
         client = new __1.MoontonSDK(merge([
             // FIRST, so the generated fields below win: sdk-test-control.json's
             // test.client.options adds to the live client, it does not redirect it.
@@ -128,7 +126,8 @@ function basicSetup(extra) {
             // argument at all - so a bare 'extra' silently discarded the apikey
             // and server values above and handed the SDK undefined. Harmless
             // while there was nothing in that object; not harmless now.
-            extra || {}
+            extra || {},
+            { system: { fetch: transport.fetch } }
         ]));
     }
     const setup = {
@@ -140,7 +139,7 @@ function basicSetup(extra) {
         data: entityData,
         explain: 'TRUE' === env.MOONTON_TEST_EXPLAIN,
         live,
-        syntheticOnly: live && !idmapOverridden,
+        transport,
         now: Date.now(),
     };
     return setup;

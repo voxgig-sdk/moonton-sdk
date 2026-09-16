@@ -4,7 +4,10 @@ declare(strict_types=1);
 // Moonton SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class MoontonFeatures
@@ -14,8 +17,14 @@ class MoontonFeatures
         switch ($name) {
             case "base":
                 return new MoontonBaseFeature();
+            case "ratelimit":
+                return new MoontonRatelimitFeature();
+            case "retry":
+                return new MoontonRetryFeature();
             case "test":
                 return new MoontonTestFeature();
+            case "timeout":
+                return new MoontonTimeoutFeature();
             default:
                 return new MoontonBaseFeature();
         }
@@ -31,7 +40,10 @@ class MoontonFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

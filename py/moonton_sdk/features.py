@@ -1,12 +1,18 @@
 # Moonton SDK feature factory
 
 from moonton_sdk.feature.base_feature import MoontonBaseFeature
+from moonton_sdk.feature.ratelimit_feature import MoontonRatelimitFeature
+from moonton_sdk.feature.retry_feature import MoontonRetryFeature
 from moonton_sdk.feature.test_feature import MoontonTestFeature
+from moonton_sdk.feature.timeout_feature import MoontonTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: MoontonBaseFeature(),
+    "ratelimit": lambda: MoontonRatelimitFeature(),
+    "retry": lambda: MoontonRetryFeature(),
     "test": lambda: MoontonTestFeature(),
+    "timeout": lambda: MoontonTimeoutFeature(),
 }
 
 
