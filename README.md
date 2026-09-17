@@ -105,12 +105,12 @@ local results, err = client:Game():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/moonton-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/moonton-sdk/releases) |
-| Python | `voxgig-sdk-moonton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/moonton-sdk/releases) |
-| PHP | `voxgig-sdk/moonton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/moonton-sdk/releases) |
+| TypeScript | `@voxgig-sdk/moonton-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/moonton-sdk/tags) |
+| Python | `voxgig-sdk-moonton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/moonton-sdk/tags) |
+| PHP | `voxgig-sdk/moonton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/moonton-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/moonton-sdk/go` | `go get github.com/voxgig-sdk/moonton-sdk/go@latest` |
-| Ruby | `voxgig-sdk-moonton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/moonton-sdk/releases) |
-| Lua | `voxgig-sdk-moonton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/moonton-sdk/releases) |
+| Ruby | `voxgig-sdk-moonton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/moonton-sdk/tags) |
+| Lua | `voxgig-sdk-moonton` | publish pending — [install from git tag](https://github.com/voxgig-sdk/moonton-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/moonton-sdk/go-cli` | `go install github.com/voxgig-sdk/moonton-sdk/go-cli/cmd/moonton@latest` |
 | Go MCP server | `github.com/voxgig-sdk/moonton-sdk/go-mcp` | `go get github.com/voxgig-sdk/moonton-sdk/go-mcp@latest` |
 
