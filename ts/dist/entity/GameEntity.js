@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GameEntity = void 0;
 const MoontonEntityBase_1 = require("../MoontonEntityBase");
-// TODO: needs Entity superclass
 class GameEntity extends MoontonEntityBase_1.MoontonEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

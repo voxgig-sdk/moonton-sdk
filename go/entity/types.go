@@ -1,7 +1,7 @@
 // Typed models for the Moonton SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,14 +14,6 @@ import (
 
 // Game is the typed data model for the game entity.
 type Game struct {
-	Active *bool `json:"active,omitempty"`
-	Description *string `json:"description,omitempty"`
-	Genre string `json:"genre"`
-	Id string `json:"id"`
-	Name string `json:"name"`
-	Platforms *[]any `json:"platforms,omitempty"`
-	PlayerCount *int `json:"playerCount,omitempty"`
-	ReleaseDate *string `json:"releaseDate,omitempty"`
 }
 
 // GameListMatch is the typed request payload for Game.ListTyped.

@@ -24,71 +24,145 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "game": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "active",
-              "req": false,
-              "short": "Whether the game is currently active",
-              "type": "`$BOOLEAN`"
+          "fields": {
+            "active": {
+              "a": true,
+              "h": "Active",
+              "n": "active",
+              "r": false,
+              "sh": "Whether the game is currently active",
+              "t": "`$BOOLEAN`"
             },
-            {
-              "active": true,
-              "name": "description",
-              "req": false,
-              "short": "Brief description of the game",
-              "type": "`$STRING`"
+            "description": {
+              "a": true,
+              "h": "Description",
+              "n": "description",
+              "r": false,
+              "sh": "Brief description of the game",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "genre",
-              "req": true,
-              "short": "Game genre",
-              "type": "`$STRING`"
+            "genre": {
+              "a": true,
+              "h": "Genre",
+              "n": "genre",
+              "r": true,
+              "sh": "Game genre",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "id",
-              "req": true,
-              "short": "Unique identifier for the game",
-              "type": "`$STRING`"
+            "id": {
+              "a": true,
+              "h": "Id",
+              "n": "id",
+              "r": true,
+              "sh": "Unique identifier for the game",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "name",
-              "req": true,
-              "short": "Name of the game",
-              "type": "`$STRING`"
+            "name": {
+              "a": true,
+              "h": "Name",
+              "n": "name",
+              "r": true,
+              "sh": "Name of the game",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "platforms",
-              "req": false,
-              "short": "Platforms where the game is available",
-              "type": "`$ARRAY`"
+            "platforms": {
+              "a": true,
+              "h": "Platforms",
+              "n": "platforms",
+              "r": false,
+              "sh": "Platforms where the game is available",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "playerCount",
-              "req": false,
-              "short": "Current active player count",
-              "type": "`$INTEGER`"
+            "playerCount": {
+              "a": true,
+              "h": "Player Count",
+              "n": "playerCount",
+              "r": false,
+              "sh": "Current active player count",
+              "t": "`$INTEGER`"
             },
-            {
-              "active": true,
-              "format": "date",
-              "name": "releaseDate",
-              "req": false,
-              "short": "Release date of the game",
-              "type": "`$STRING`"
+            "releaseDate": {
+              "a": true,
+              "fo": "date",
+              "h": "Release Date",
+              "n": "releaseDate",
+              "r": false,
+              "sh": "Release date of the game",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "id": {
             "field": "id",
             "name": "id"
@@ -100,50 +174,50 @@
               "name": "list",
               "points": [
                 {
-                  "active": true,
-                  "args": {
+                  "a": true,
+                  "co": {
+                    "id": "GET /games",
+                    "source": "openapi3",
+                    "version": 2
+                  },
+                  "g": {
                     "query": [
                       {
-                        "active": true,
-                        "example": 10,
-                        "kind": "query",
-                        "name": "limit",
-                        "orig": "limit",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 10,
+                        "k": "query",
+                        "n": "limit",
+                        "or": "limit",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       },
                       {
-                        "active": true,
-                        "example": 0,
-                        "kind": "query",
-                        "name": "offset",
-                        "orig": "offset",
-                        "reqd": false,
-                        "type": "`$INTEGER`"
+                        "a": true,
+                        "ex": 0,
+                        "k": "query",
+                        "n": "offset",
+                        "or": "offset",
+                        "r": false,
+                        "t": "`$INTEGER`"
                       }
                     ]
                   },
-                  "contract": {
-                    "id": "GET /games",
-                    "json": "{\"operationId\":\"getGames\",\"parameters\":[{\"description\":\"Maximum number of games to return\",\"in\":\"query\",\"name\":\"limit\",\"required\":false,\"schema\":{\"default\":10,\"maximum\":100,\"minimum\":1,\"type\":\"integer\"}},{\"description\":\"Number of games to skip for pagination\",\"in\":\"query\",\"name\":\"offset\",\"required\":false,\"schema\":{\"default\":0,\"minimum\":0,\"type\":\"integer\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"data\":{\"items\":{\"properties\":{\"active\":{\"description\":\"Whether the game is currently active\",\"example\":true,\"type\":\"boolean\"},\"description\":{\"description\":\"Brief description of the game\",\"example\":\"5v5 MOBA game for mobile devices\",\"type\":\"string\"},\"genre\":{\"description\":\"Game genre\",\"example\":\"MOBA\",\"type\":\"string\"},\"id\":{\"description\":\"Unique identifier for the game\",\"example\":\"mlbb_001\",\"type\":\"string\"},\"name\":{\"description\":\"Name of the game\",\"example\":\"Mobile Legends: Bang Bang\",\"type\":\"string\"},\"platforms\":{\"description\":\"Platforms where the game is available\",\"example\":[\"iOS\",\"Android\"],\"items\":{\"enum\":[\"iOS\",\"Android\",\"PC\"],\"type\":\"string\"},\"type\":\"array\"},\"playerCount\":{\"description\":\"Current active player count\",\"example\":100000000,\"type\":\"integer\"},\"releaseDate\":{\"description\":\"Release date of the game\",\"example\":\"2016-07-14\",\"format\":\"date\",\"type\":\"string\"}},\"required\":[\"id\",\"name\",\"genre\"],\"type\":\"object\"},\"type\":\"array\"},\"success\":{\"example\":true,\"type\":\"boolean\"},\"total\":{\"description\":\"Total number of games available\",\"example\":15,\"type\":\"integer\"}},\"type\":\"object\"}}},\"description\":\"Successful response with games list\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"example\":\"INVALID_REQUEST\",\"type\":\"string\"},\"message\":{\"description\":\"Human-readable error message\",\"example\":\"The request parameters are invalid\",\"type\":\"string\"}},\"type\":\"object\"},\"success\":{\"example\":false,\"type\":\"boolean\"}},\"type\":\"object\"}}},\"description\":\"Bad request\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"example\":\"INVALID_REQUEST\",\"type\":\"string\"},\"message\":{\"description\":\"Human-readable error message\",\"example\":\"The request parameters are invalid\",\"type\":\"string\"}},\"type\":\"object\"},\"success\":{\"example\":false,\"type\":\"boolean\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Invalid or missing API key\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"properties\":{\"code\":{\"description\":\"Error code\",\"example\":\"INVALID_REQUEST\",\"type\":\"string\"},\"message\":{\"description\":\"Human-readable error message\",\"example\":\"The request parameters are invalid\",\"type\":\"string\"}},\"type\":\"object\"},\"success\":{\"example\":false,\"type\":\"boolean\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"ApiKeyAuth\":[]}],\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key for authentication. Contact Moonton to obtain your API key.\",\"in\":\"header\",\"name\":\"X-API-Key\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
-                    "source": "openapi3",
-                    "version": 1
-                  },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/games",
-                  "segments": [
-                    {
-                      "lit": "games"
-                    }
-                  ],
-                  "select": {
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/games",
+                  "q": {
                     "exist": [
                       "limit",
                       "offset"
                     ]
                   },
-                  "transform": {
+                  "r": {},
+                  "s": [
+                    {
+                      "lit": "games"
+                    }
+                  ],
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body.data`"
                   }
@@ -572,13 +646,13 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {},
-              "match": {},
-              "op": "list",
-              "spec": [],
-              "valid": [
+              "a": true,
+              "d": {},
+              "i": {},
+              "m": {},
+              "o": "list",
+              "s": [],
+              "v": [
                 {
                   "apply": "ItemExists",
                   "def": {

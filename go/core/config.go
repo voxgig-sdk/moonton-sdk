@@ -95,47 +95,55 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "active",
-						"short": "Whether the game is currently active",
+						"title": "Active",
 						"type": "`$BOOLEAN`",
+						"short": "Whether the game is currently active",
 					},
 					map[string]any{
 						"name": "description",
-						"short": "Brief description of the game",
+						"title": "Description",
 						"type": "`$STRING`",
+						"short": "Brief description of the game",
 					},
 					map[string]any{
 						"name": "genre",
+						"title": "Genre",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Game genre",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"title": "Id",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Unique identifier for the game",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
+						"title": "Name",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Name of the game",
-						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "platforms",
-						"short": "Platforms where the game is available",
+						"title": "Platforms",
 						"type": "`$ARRAY`",
+						"short": "Platforms where the game is available",
 					},
 					map[string]any{
 						"name": "playerCount",
-						"short": "Current active player count",
+						"title": "Player Count",
 						"type": "`$INTEGER`",
+						"short": "Current active player count",
 					},
 					map[string]any{
-						"format": "date",
 						"name": "releaseDate",
-						"short": "Release date of the game",
+						"title": "Release Date",
 						"type": "`$STRING`",
+						"short": "Release date of the game",
+						"format": "date",
 					},
 				},
 				"id": map[string]any{
@@ -149,24 +157,6 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": 10,
-											"kind": "query",
-											"name": "limit",
-											"orig": "limit",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": 0,
-											"kind": "query",
-											"name": "offset",
-											"orig": "offset",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/games",
@@ -175,18 +165,37 @@ func MakeConfig() map[string]any {
 										"lit": "games",
 									},
 								},
+								"parts": []any{
+									"games",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body.data`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "limit",
+											"orig": "limit",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 10,
+										},
+										map[string]any{
+											"name": "offset",
+											"orig": "offset",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 0,
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"limit",
 										"offset",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body.data`",
-								},
-								"parts": []any{
-									"games",
 								},
 							},
 						},

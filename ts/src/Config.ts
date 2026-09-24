@@ -16,12 +16,6 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS: Record<string, any[]> = {
   
 }
@@ -32,7 +26,6 @@ class Config {
   makeFeature(this: any, fn: string) {
     const fc = FEATURE_CLASS[fn]
     const fi = new fc()
-    // TODO: errors etc
     return fi
   }
 
@@ -144,47 +137,55 @@ class Config {
       "fields": [
         {
           "name": "active",
-          "short": "Whether the game is currently active",
-          "type": "`$BOOLEAN`"
+          "title": "Active",
+          "type": "`$BOOLEAN`",
+          "short": "Whether the game is currently active"
         },
         {
           "name": "description",
-          "short": "Brief description of the game",
-          "type": "`$STRING`"
+          "title": "Description",
+          "type": "`$STRING`",
+          "short": "Brief description of the game"
         },
         {
           "name": "genre",
+          "title": "Genre",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Game genre",
-          "type": "`$STRING`"
+          "short": "Game genre"
         },
         {
           "name": "id",
+          "title": "Id",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Unique identifier for the game",
-          "type": "`$STRING`"
+          "short": "Unique identifier for the game"
         },
         {
           "name": "name",
+          "title": "Name",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Name of the game",
-          "type": "`$STRING`"
+          "short": "Name of the game"
         },
         {
           "name": "platforms",
-          "short": "Platforms where the game is available",
-          "type": "`$ARRAY`"
+          "title": "Platforms",
+          "type": "`$ARRAY`",
+          "short": "Platforms where the game is available"
         },
         {
           "name": "playerCount",
-          "short": "Current active player count",
-          "type": "`$INTEGER`"
+          "title": "Player Count",
+          "type": "`$INTEGER`",
+          "short": "Current active player count"
         },
         {
-          "format": "date",
           "name": "releaseDate",
+          "title": "Release Date",
+          "type": "`$STRING`",
           "short": "Release date of the game",
-          "type": "`$STRING`"
+          "format": "date"
         }
       ],
       "id": {
@@ -198,24 +199,6 @@ class Config {
           "name": "list",
           "points": [
             {
-              "args": {
-                "query": [
-                  {
-                    "example": 10,
-                    "kind": "query",
-                    "name": "limit",
-                    "orig": "limit",
-                    "type": "`$INTEGER`"
-                  },
-                  {
-                    "example": 0,
-                    "kind": "query",
-                    "name": "offset",
-                    "orig": "offset",
-                    "type": "`$INTEGER`"
-                  }
-                ]
-              },
               "kind": "http",
               "method": "GET",
               "orig": "/games",
@@ -224,19 +207,38 @@ class Config {
                   "lit": "games"
                 }
               ],
+              "parts": [
+                "games"
+              ],
+              "rename": {},
+              "transform": {
+                "req": "`reqdata`",
+                "res": "`body.data`"
+              },
+              "args": {
+                "query": [
+                  {
+                    "name": "limit",
+                    "orig": "limit",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 10
+                  },
+                  {
+                    "name": "offset",
+                    "orig": "offset",
+                    "type": "`$INTEGER`",
+                    "kind": "query",
+                    "example": 0
+                  }
+                ]
+              },
               "select": {
                 "exist": [
                   "limit",
                   "offset"
                 ]
-              },
-              "transform": {
-                "req": "`reqdata`",
-                "res": "`body.data`"
-              },
-              "parts": [
-                "games"
-              ]
+              }
             }
           ]
         }

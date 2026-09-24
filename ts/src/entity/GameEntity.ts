@@ -19,7 +19,6 @@ import type {
   GameListMatch,
 } from '../MoontonTypes'
 
-// TODO: needs Entity superclass
 class GameEntity extends MoontonEntityBase<Game> {
 
   constructor(client: MoontonSDK, entopts: any) {

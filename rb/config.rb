@@ -103,47 +103,55 @@ module MoontonConfig
           "fields" => [
             {
               "name" => "active",
-              "short" => "Whether the game is currently active",
+              "title" => "Active",
               "type" => "`$BOOLEAN`",
+              "short" => "Whether the game is currently active",
             },
             {
               "name" => "description",
-              "short" => "Brief description of the game",
+              "title" => "Description",
               "type" => "`$STRING`",
+              "short" => "Brief description of the game",
             },
             {
               "name" => "genre",
+              "title" => "Genre",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Game genre",
-              "type" => "`$STRING`",
             },
             {
               "name" => "id",
+              "title" => "Id",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Unique identifier for the game",
-              "type" => "`$STRING`",
             },
             {
               "name" => "name",
+              "title" => "Name",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Name of the game",
-              "type" => "`$STRING`",
             },
             {
               "name" => "platforms",
-              "short" => "Platforms where the game is available",
+              "title" => "Platforms",
               "type" => "`$ARRAY`",
+              "short" => "Platforms where the game is available",
             },
             {
               "name" => "playerCount",
-              "short" => "Current active player count",
+              "title" => "Player Count",
               "type" => "`$INTEGER`",
+              "short" => "Current active player count",
             },
             {
-              "format" => "date",
               "name" => "releaseDate",
-              "short" => "Release date of the game",
+              "title" => "Release Date",
               "type" => "`$STRING`",
+              "short" => "Release date of the game",
+              "format" => "date",
             },
           ],
           "id" => {
@@ -157,24 +165,6 @@ module MoontonConfig
               "name" => "list",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => 10,
-                        "kind" => "query",
-                        "name" => "limit",
-                        "orig" => "limit",
-                        "type" => "`$INTEGER`",
-                      },
-                      {
-                        "example" => 0,
-                        "kind" => "query",
-                        "name" => "offset",
-                        "orig" => "offset",
-                        "type" => "`$INTEGER`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/games",
@@ -183,19 +173,38 @@ module MoontonConfig
                       "lit" => "games",
                     },
                   ],
+                  "parts" => [
+                    "games",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body.data`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "limit",
+                        "orig" => "limit",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 10,
+                      },
+                      {
+                        "name" => "offset",
+                        "orig" => "offset",
+                        "type" => "`$INTEGER`",
+                        "kind" => "query",
+                        "example" => 0,
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "limit",
                       "offset",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body.data`",
-                  },
-                  "parts" => [
-                    "games",
-                  ],
                 },
               ],
             },
